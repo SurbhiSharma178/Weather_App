@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.outer-box{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem; 
+  padding-left: 8rem;
+  padding-right: 8rem;  
+  /* margin-top: 1rem;  */
+  background-image: linear-gradient(to bottom right, #00ACC1,#1976D2); 
+  background-color: #1D4ED8; 
+  /* max-width: 1024px;  */
+  color: #fff;
+  box-shadow: 0 20px 25px -5px #0000001a, 0 10px 10px -5px #0000000a; 
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
