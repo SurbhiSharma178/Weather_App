@@ -2,18 +2,44 @@ import React from 'react'
 import './weather.css';
 
 const TodayData = () => {
+
+  const cities =[
+    {
+      id:1,
+      name:'Ajmer',
+    },
+    {
+      id:2,
+      name:'Jaipur',
+    },
+    {
+      id:3,
+      name:'Udaipur',
+    },
+    {
+      id:2,
+      name:'Jodhpur',
+    },
+    {
+      id:2,
+      name:'Bikanar',
+    }
+  ]
+    
+  
   return (
     <>
     <div className="upper-box">
+     
       <div className="nav">
-        <button>Ajmer</button>
-        <button> Jaipur</button>
-        <button>Udaipur</button>
-        <button>Jodhpur</button>
-        <button>Bikanar</button>
+      {
+        
+        cities.map((city)=>{
+            return <button>{city.name}</button>
+        })
+      }
       </div>
-      <input type="text" placeholder='Search by city'/>
-
+      
       </div>
 
     </>

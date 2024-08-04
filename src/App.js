@@ -1,14 +1,18 @@
 import React from 'react'
 import TodayData from './components/TodayData'
-import OtherDays from './components/OtherDays'
+import Inputs from './components/Inputs';
 import './App.css';
+import TimeAndLocation from './components/TimeAndLocation';
+import TemoAndDetails from './components/TemoAndDetails';
 
 const App = () => {
   return (
     <>
     <div className="outer-box">
     <TodayData/>
-    <OtherDays/>
+    <Inputs/>
+    <TimeAndLocation/>
+    <TemoAndDetails/>
     </div>
     </>
   )

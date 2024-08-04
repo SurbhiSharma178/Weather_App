@@ -14,14 +14,141 @@ align-items: center;
 }
 .nav button{
 padding: 0.5rem 0.75rem 0.5rem 0.75rem; 
-transition: ease-in;
+border: none;
 font-size: 1.125rem;
 line-height: 1.75rem; 
 font-weight: 500; 
-border-radius: 0.375rem; 
-background-color: #2da7e8;
+background: transparent;
+color: #fff;
+}
 
-:hover {
-  background-color: #374151; 
-  }
+.nav button:hover{
+padding: 0.5rem 0.75rem 0.5rem 0.75rem ; 
+background-color: #5b749c; 
+border-radius: 0.375rem; 
+transition: ease-in;
+}
+
+.secondNavbar{
+  display: flex; 
+  flex-direction: row; 
+ margin-top: 1.5rem;
+ margin-bottom: 1.5rem;
+ justify-content: center; 
+ align-items: center;
+}
+
+.searchBar{
+ display: flex; 
+ flex-direction: row; 
+width: 75%;
+justify-content: center; 
+/* margin-left: 1rem;  */
+}
+.searchBar input{
+  padding: 0.5rem; 
+  color: #6B7280; 
+  font-size: 1.25rem;
+  line-height: 1.75rem; 
+  font-weight: 300; 
+  text-transform: capitalize; 
+  width: 100%; 
+  /* box-shadow: 0 20px 25px -5px #0000001a, 0 10px 10px -5px #0000000a;  */
+}
+.searchBar input:focus{
+  outline: none;
+}
+
+.secondNavbar .degreeChanger{
+display: flex;
+flex-direction: row;
+width: 25%;
+align-items: center;
+justify-content: center;
+font-weight: 500; 
+font-size: 1.5rem;
+line-height: 2rem; 
+}
+
+.secondNavbar .degreeChanger button{
+transition: ease-out; 
+font-size: 1.5rem;
+line-height: 2rem; 
+font-weight: 500; 
+background: transparent;
+border: none;
+color: #fff;
+}
+
+.timeAndLocation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+ margin-bottom: 1.5rem;
+
+}
+
+.address{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.50rem;
+  margin-bottom: 0.50rem; 
+}
+
+.currentWeather{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.5rem;
+padding-bottom: 1.5rem; 
+font-size: 1.25rem;
+line-height: 1.75rem; 
+color: #4DD0E1;
+}
+
+.weatherdetail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.verticalDetails{
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem; 
+align-items: flex-start; 
+}
+.verticalDetails .detail{
+  font-size: 1rem;
+line-height: 1.25rem; 
+font-weight: 300; 
+align-items: center;
+justify-content: center;
+margin-top: 0.25rem; 
+margin-bottom: 0.25rem; 
+
+}
+
+.horizonatalDetail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; 
+  margin-left: 2.5rem; 
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
+}
+.horizonatalDetail .horizontalIcon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right:0.25rem;
+  margin-left:0.25rem;
 }
