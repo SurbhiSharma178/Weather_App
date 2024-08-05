@@ -4,6 +4,7 @@ import Inputs from './components/Inputs';
 import './App.css';
 import TimeAndLocation from './components/TimeAndLocation';
 import TemoAndDetails from './components/TemoAndDetails';
+import Forecast from './components/Forecast';
 
 const App = () => {
   return (
@@ -13,6 +14,8 @@ const App = () => {
     <Inputs/>
     <TimeAndLocation/>
     <TemoAndDetails/>
+    <Forecast/>
+    <Forecast/>
     </div>
     </>
   )
