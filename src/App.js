@@ -5,8 +5,19 @@ import './App.css';
 import TimeAndLocation from './components/TimeAndLocation';
 import TemoAndDetails from './components/TemoAndDetails';
 import Forecast from './components/Forecast';
+import getWeatherData from './server/weatherServices';
+
+
 
 const App = () => {
+  const getWeather=async ()=>{
+    const data = await getWeatherData('weather', { q:'bhilwara'})
+    console.log(data);
+    
+  }
+
+  getWeather();
+  
   return (
     <>
     <div className="outer-box">

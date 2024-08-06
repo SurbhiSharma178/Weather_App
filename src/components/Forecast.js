@@ -12,8 +12,9 @@ const Forecast = () => {
       {
         data.map((data,index)=>{
           return <div key={index} className='weatherDetailInTime'>
-            <p style={{fontSize:30}}>wed</p>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="weather icon" />
+            <p style={{fontWeight:300,fontSize: "1.250rem"}}>wed</p>
+            <img  style={{marginTop: "0.25rem",marginBottom: "0.25rem",width: "3rem" }} src="http://openweathermap.org/img/wn/01d@2x.png" alt="weather icon" />
+            <p style={{fontWeight:500}}>12°</p>
           </div>
         })
       }
