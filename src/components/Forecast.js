@@ -11,9 +11,9 @@ const Forecast = () => {
       <div className="timeForecast">
       {
         data.map((data,index)=>{
-          return <div key={index}>
-            <p>wed</p>
-            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="" />
+          return <div key={index} className='weatherDetailInTime'>
+            <p style={{fontSize:30}}>wed</p>
+            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="weather icon" />
           </div>
         })
       }
