@@ -11,16 +11,19 @@ const getWeatherData= (infoType, searchParams)=>{
   .then((res)=>res.json())
 }
 
+const iconUrlFromCode=(icon)=> `http://openweathermap.org/img/wn/01d@2x.png`
+  
+
 const formatToLocal=(sec,offset,format="cccc ,dd LLL yyyy' | Local time :'hh:mm a")=>
   DateTime.fromSeconds(sec+offset ,{zone:'utc'}).toFormat(format);
 
 
 
 
-const formatteCurrent=(data)=>{
+const formatCurrent=(data)=>{
    const {
-    coordiante:{lat,lon}, 
-    main:{temp,feels_like, temp_max, humidity},
+    coord:{lat,lon}, 
+    main:{temp,feels_like,temp_min,temp_max, humidity},
     name, dt,sys:{country, sunrise,sunset},
     weather,
     wind:{speed},
@@ -28,9 +31,23 @@ const formatteCurrent=(data)=>{
 }= data;
 const {main:details,icon}= weather[0]
 const formattedLocalTime= formatToLocal(dt,timezone);
+
+return { temp , feels_like,temp_max,temp_min,humidity,name,country, 
+  sunrise:formatToLocal(sunrise , timezone,'hh:mm a'),
+  sunset:formatToLocal(sunset , timezone,'hh:mm a'),
+  speed,
+  details,
+  icon:iconUrlFromCode(icon),
+  formattedLocalTime
+  };
 } 
+
 const getFormatteWeatherData = async(searchParams)=>{
-  const formatedCurrentWeather= await getWeatherData('weather',searchParams).then(formatteCurrent)
+  const formatedCurrentWeather= await getWeatherData('weather',searchParams)
+  .then(formatCurrent)
+  console.log(formatedCurrentWeather);
+  return {...formatedCurrentWeather}
+  
 }
 
-export default getWeatherData
+export default getFormatteWeatherData
