@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TodayData from './components/TodayData'
 import Inputs from './components/Inputs';
 import './App.css';
@@ -10,23 +10,36 @@ import getFormattedWeatherData from './server/weatherServices';
 
 
 const App = () => {
-  const getWeather=async ()=>{
-    const data = await getFormattedWeatherData({ q:'bhilwara'})
-    console.log(data);
+
+  const [query,setQuery]=useState({q:'bhilwara'})
+  const [units,setUnits]=useState('metric');
+  const [weather,setWeather]=useState(null);
+
+  const getWeather=async ()=>{ await getFormattedWeatherData({ ...query,units}).then(data=>{
+      setWeather(data);
+    })
+
     
   }
 
-  getWeather();
+  useEffect(()=>{
+    getWeather()
+  },[query,units])
+
   
   return (
     <>
     <div className="outer-box">
-    <TodayData/>
+    <TodayData setQuery={setQuery}/>
     <Inputs/>
-    <TimeAndLocation/>
-    <TemoAndDetails/>
-    <Forecast/>
-    <Forecast/>
+    {weather && (
+      <>
+    <TimeAndLocation weather={weather}/>
+    <TemoAndDetails weather={weather}/>
+    <Forecast title="hourly forcast" data={weather.hourly}/>
+    <Forecast title="Daily Forecast" data={weather.daily}/>
+    </>
+  )}
     </div>
     </>
   )

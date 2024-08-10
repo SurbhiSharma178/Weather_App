@@ -1,7 +1,7 @@
 import React from 'react'
 import './weather.css';
 
-const TodayData = () => {
+const TodayData = ({setQuery}) => {
 
   const cities =[
     {
@@ -30,12 +30,10 @@ const TodayData = () => {
   return (
     <>
     <div className="upper-box">
-     
       <div className="nav">
       {
-        
         cities.map((city)=>{
-            return <button>{city.name}</button>
+            return <button onClick={()=>setQuery({q:city.name})}>{city.name}</button>
         })
       }
       </div>
