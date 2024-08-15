@@ -14,7 +14,12 @@ This is a simple weather application built with React that displays the 5-day we
 - **React:** Frontend library used to build the UI components.
 - **CSS:** Used for styling the application and ensuring it is responsive across different devices.
 - **OpenWeatherMap API:** The app fetches weather data using this API.
+- **Version Control:** Git
 
- ## Usage
+ ## Usage ✒️
 - Enter the name of the city in the search bar to get the latest weather information.
 - View details such as temperature, humidity, wind speed, and overall weather conditions.
+
+  ## Demo
+  ![weather app](https://github.com/user-attachments/assets/c404dcf0-c661-4e40-afeb-2464487f5768)
+
