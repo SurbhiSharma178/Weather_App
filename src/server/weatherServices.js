@@ -1,15 +1,17 @@
 import { DateTime} from "luxon"
-const API_KEY='04e98f608f65c76c433f6ebd8718adc2'
+
+const API_KEY=process.env.API_KEY
 
 const BASE_URL='https://api.openweathermap.org/data/2.5/'
 
 
-const getWeatherData= ( infoType, searchParams)=>{
+const getWeatherData= async ( infoType, searchParams)=>{
   const url= new URL(BASE_URL+infoType)
   url.search= new URLSearchParams({...searchParams, appid:API_KEY})
   
   console.log(url);
-  return fetch(url).then((res)=>res.json());
+  const res = await fetch(url)
+  return await res.json()
 }
 
 const iconUrlFromCode=(icon)=> `http://openweathermap.org/img/wn/${icon}@2x.png`
